@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>thymeleaf</title>
+</head>
+<body>
+    <h3>thymeleaf请求成功</h3>
+    <!--将div里面文本内容设置为我们制定的值-->
+    <div id="div01" class="myDiv" th:id="${hello}" th:class="${hello}" th:text="${hello}">替换掉</div>
+    <div th:text="${hello}"></div>
+    <div th:utext="${hello}"></div>
+<!--th:each写在那个标签上，每次遍历都会生成当前标签,3个h4-->
+<h4 th:text="${user}" th:each="user:${user}"></h4>
+<hr/>
+<h4>
+    <!--高级取值写法，可以把值取到行内-->
+    <!--<span th:each="user:${user}">[[${user}}]]</span>-->
+    <span th:text="${user}" th:each="user:${user}"></span>
+</h4>
+</body>
+</html>
